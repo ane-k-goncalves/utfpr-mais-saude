@@ -3,6 +3,9 @@
 ### Título ou Nome da aplicação: UTFPR+Saúde
 ### Identificação/Autor: Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
 ### Descrição do projeto: Breve explicação sobre o tema e o escopo da API.
+
+Uma aplicação web de gestão de saúde universitária, voltada para alunos e colaboradores da UTFPR. O sistema permite o acompanhamento da saúde individual (medicações, vacinas, comorbidades), além de oferecer informações em tempo real sobre as Unidades de Pronto Atendimento (UPAs), como localização, número de profissionais, tempo médio de espera e consultas agendadas.
+
 ### Prototipação no Figma: 
 ### Design System: Link para o documento que descreve o Design System da aplicação.
 ### Framework CSS: 
