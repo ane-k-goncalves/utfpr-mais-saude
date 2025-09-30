@@ -7,8 +7,15 @@
 Uma aplicação web de gestão de saúde universitária, voltada para alunos e colaboradores da UTFPR. O sistema permite o acompanhamento da saúde individual (medicações, vacinas, comorbidades), além de oferecer informações em tempo real sobre as Unidades de Pronto Atendimento (UPAs), como localização, número de profissionais, tempo médio de espera e consultas agendadas.
 
 ### Prototipação no Figma: 
+
+[Link do protótipo no figma](https://www.figma.com/design/4tZAgeF6A4wuHx22eoDBCZ/utfpr--saude?node-id=15-652&p=f&t=kexI4GbFe7MKqwrA-0)
+
 ### Design System: Link para o documento que descreve o Design System da aplicação.
+
 ### Framework CSS: 
+
+Tailwind 
+
 ### Dependências: Lista das bibliotecas JavaScript utilizadas. 
 ### Link para o site em produção: URL para acessar o site publicado no GitHub Pages.
 ### Checklist de Funcionalidades: Uma lista de funcionalidades marcadas como concluídas (ou não) durante o desenvolvimento. 
