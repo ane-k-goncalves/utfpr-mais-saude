@@ -33,6 +33,8 @@ Uma aplicação web de gestão de saúde universitária, voltada para alunos e c
 
 fonte escolhida: Roboto Condensed
 
+[Design system](https://docs.google.com/document/d/1MmzN1MxJ6XGlTIMH5mX4Trcjf0Ef4pcu5bdWs7PNxBQ/edit?tab=t.0)
+
 ### Framework CSS: 
 
 Tailwind 
