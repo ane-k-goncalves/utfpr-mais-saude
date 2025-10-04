@@ -1,7 +1,15 @@
-# utfpr-mais-saude
+### logo da aplicação:
 
-### Título ou Nome da aplicação: UTFPR+Saúde
-### Identificação/Autor: Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
+![Logo](./public/logo2.png)
+
+### Título ou Nome da aplicação: 
+
+UTFPR+Saúde
+
+### Identificação/Autor: 
+
+Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
+
 ### Descrição do projeto: Breve explicação sobre o tema e o escopo da API.
 
 Uma aplicação web de gestão de saúde universitária, voltada para alunos e colaboradores da UTFPR. O sistema permite o acompanhamento da saúde individual (medicações, vacinas, comorbidades), além de oferecer informações em tempo real sobre as Unidades de Pronto Atendimento (UPAs), como localização, número de profissionais, tempo médio de espera e consultas agendadas.
@@ -12,6 +20,18 @@ Uma aplicação web de gestão de saúde universitária, voltada para alunos e c
 
 
 ### Design System: Link para o documento que descreve o Design System da aplicação.
+
+## Paleta de cores:
+
+- Cor primária: #80D2FA
+- Cor secundária: #DEEDEE
+- Cores neutras: #D5D3D3, #E7FDFF, #1D1A1A
+
+[Design system](https://docs.google.com/document/d/1MmzN1MxJ6XGlTIMH5mX4Trcjf0Ef4pcu5bdWs7PNxBQ/edit?tab=t.0)
+
+## Tipografia
+
+fonte escolhida: Roboto Condensed
 
 [Design system](https://docs.google.com/document/d/1MmzN1MxJ6XGlTIMH5mX4Trcjf0Ef4pcu5bdWs7PNxBQ/edit?tab=t.0)
 
