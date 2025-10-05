@@ -4,7 +4,7 @@
 
 ### Título ou Nome da aplicação: 
 
-UTFPR+Saúde
+UTF+Saúde
 
 ### Identificação/Autor: 
 
