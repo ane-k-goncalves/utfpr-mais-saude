@@ -2,6 +2,8 @@
 
 ![Logo](./public/logo2.png)
 
+![Logo](./public/logo.logo.png)
+
 ### Título ou Nome da aplicação: 
 
 UTF+Saúde
