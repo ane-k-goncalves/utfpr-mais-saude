@@ -1,21 +1,45 @@
-# utfpr-mais-saude
+### logo da aplicação:
 
-### Título ou Nome da aplicação: UTFPR+Saúde
+![Logo](./public/logo2.png)
 
-### Identificação/Autor: Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
+### Título ou Nome da aplicação: 
+
+UTF+Saúde
+
+### Identificação/Autor: 
+
+Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
 
 ### Descrição do projeto: Breve explicação sobre o tema e o escopo da API.
 
 Uma aplicação web de gestão de saúde universitária, voltada para alunos e colaboradores da UTFPR. O sistema permite o acompanhamento da saúde individual (medicações, vacinas, comorbidades), além de oferecer informações em tempo real sobre as Unidades de Pronto Atendimento (UPAs), como localização, número de profissionais, tempo médio de espera e consultas agendadas.
 
-### Prototipação no Figma:
+### Prototipação no Figma: 
+
+[Link do protótipo no figma](https://www.figma.com/design/4tZAgeF6A4wuHx22eoDBCZ/utfpr--saude?node-id=15-652&p=f&t=kexI4GbFe7MKqwrA-0)
+
 
 ### Design System: Link para o documento que descreve o Design System da aplicação.
 
-### Framework CSS:
+## Paleta de cores:
 
-### Dependências: Lista das bibliotecas JavaScript utilizadas.
+- Cor primária: #80D2FA
+- Cor secundária: #DEEDEE
+- Cores neutras: #D5D3D3, #E7FDFF, #1D1A1A
 
+[Design system](https://docs.google.com/document/d/1MmzN1MxJ6XGlTIMH5mX4Trcjf0Ef4pcu5bdWs7PNxBQ/edit?tab=t.0)
+
+## Tipografia
+
+fonte escolhida: Roboto Condensed
+
+[Design system](https://docs.google.com/document/d/1MmzN1MxJ6XGlTIMH5mX4Trcjf0Ef4pcu5bdWs7PNxBQ/edit?tab=t.0)
+
+### Framework CSS: 
+
+Tailwind 
+
+### Dependências: Lista das bibliotecas JavaScript utilizadas. 
 ### Link para o site em produção: URL para acessar o site publicado no GitHub Pages.
 
 ### Checklist de Funcionalidades: Uma lista de funcionalidades marcadas como concluídas (ou não) durante o desenvolvimento.
