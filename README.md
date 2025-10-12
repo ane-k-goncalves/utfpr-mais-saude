@@ -2,7 +2,7 @@
 
 ![Logo](./public/logo2.png)
 
-![Logo](./public/logo.logo.png)
+![Logo](./public/logo.png.png)
 
 ### Título ou Nome da aplicação: 
 
