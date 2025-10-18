@@ -2,7 +2,15 @@
 
 ### Título ou Nome da aplicação: UTFPR+Saúde
 
-### Identificação/Autor: Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
+![Logo](./public/logo.png.png)
+
+### Título ou Nome da aplicação: 
+
+UTF+Saúde
+
+### Identificação/Autor: 
+
+Ane Karine Gonçalves, Gabriel Luis Kaminski e Tiago Sampaio Cordeiro.
 
 ### Descrição do projeto: Breve explicação sobre o tema e o escopo da API.
 
