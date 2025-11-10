@@ -1,10 +1,11 @@
-<app-navbar></app-navbar>
+<div class="min-h-screen flex flex-col">
+  <app-navbar></app-navbar>
 
+  <main class="flex-grow flex flex-col items-center justify-center gap-6 pt-20">
+    <app-logo></app-logo>
+    <app-login></app-login>
+    <router-outlet></router-outlet>
+  </main>
 
-<main class="min-h-[450px]">
-  <router-outlet></router-outlet>
-</main>
-
-
-<app-footer></app-footer>
-
+  <app-footer></app-footer>
+</div>
