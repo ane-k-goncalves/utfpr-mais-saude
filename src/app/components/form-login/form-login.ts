@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-form-login',
@@ -7,4 +7,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './form-login.html',
   styleUrl: './form-login.css',
 })
-export class FormLogin {}
+export class FormLogin {
+  constructor(private router: Router) {}
+
+  onSubmit() {
+    this.router.navigate(['/home']);
+  }
+}
