@@ -1,0 +1,37 @@
+<div class="flex flex-col items-center">
+  <!-- Imagem no topo -->
+  <!-- <img src="foto-home.jpg" class="w-full" /> -->
+
+  <!-- Container dos cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 w-full max-w-5xl mx-auto">
+    <app-card
+      [infocards]="{
+        titulo: 'Localização das UPAs',
+        descricao: 'Aqui você confere qual unidade está mais próxima de você!!',
+        imagem: 'localizacao.jpg'
+      }"
+    ></app-card>
+    <app-card
+      [infocards]="{
+        titulo: 'Consultas agendadas',
+        descricao: 'Aqui você confere as datas de suas próximas consultas!!',
+        imagem: 'agendar.jpg'
+      }"
+    ></app-card>
+    <app-card
+      [infocards]="{
+        titulo: 'Registrar medicação',
+        descricao: 'Aqui você pode registrar todos os seus medicamentos!!',
+        imagem: 'registrar.jpg'
+      }"
+    ></app-card>
+    <app-card
+      [infocards]="{
+        titulo: 'Informações das UPAs',
+        descricao:
+          'Aqui você encontra informações como medico de plantão, tempo de espera em cada UPA e quantidade de pessoas aguardando!!!',
+        imagem: 'informacao.jpg'
+      }"
+    ></app-card>
+  </div>
+</div>
