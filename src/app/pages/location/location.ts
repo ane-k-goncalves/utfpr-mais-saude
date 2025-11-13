@@ -9,6 +9,6 @@ import { GoogleMap } from '@angular/google-maps';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Location {
-  center: google.maps.LatLngLiteral = { lat: 37.7749, lng: -122.4194 };
+  center: google.maps.LatLngLiteral = { lat: -25.395, lng: -51.458 };
   zoom = 12;
 }
