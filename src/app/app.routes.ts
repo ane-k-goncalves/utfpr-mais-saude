@@ -3,6 +3,7 @@ import { Login } from './pages/login/login';
 import { Cadastro } from './pages/cadastro/cadastro';
 import { Home } from './pages/home/home';
 import { Location } from './pages/location/location';
+import { Historico } from './pages/historico/historico';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'location',
     component: Location,
+  },
+  {
+    path: 'historico',
+    component: Historico,
   },
 ];
