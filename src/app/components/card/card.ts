@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CardData } from '../../models/card.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -9,4 +10,10 @@ import { CardData } from '../../models/card.model';
 })
 export class Card {
   @Input() infocards!: CardData;
+
+  constructor(private router: Router) {}
+
+  navegar(): void {
+    this.router.navigate([this.infocards.link]);
+  }
 }
