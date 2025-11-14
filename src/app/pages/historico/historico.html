@@ -1,0 +1,27 @@
+<div *ngIf="isBaseRoute()" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+  <app-card-history
+    [cardHistorico]="{
+      title: 'Histórico de vacinas',
+      description: 'Seu histórico de vacinas aqui',
+      link: 'historico/vacinas'
+    }"
+  ></app-card-history>
+
+  <app-card-history
+    [cardHistorico]="{
+      title: 'Histórico de consultas',
+      description: 'Seu histórico de consultas aqui',
+      link: 'historico/consultas'
+    }"
+  ></app-card-history>
+
+  <app-card-history
+    [cardHistorico]="{
+      title: 'Histórico de comorbidades',
+      description: 'Seu histórico de comorbidades aqui',
+      link: 'historico/comorbidades'
+    }"
+  ></app-card-history>
+</div>
+
+<router-outlet></router-outlet>
