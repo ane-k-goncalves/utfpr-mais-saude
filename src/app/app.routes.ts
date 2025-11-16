@@ -8,6 +8,7 @@ import { HistoricoVacinas } from './pages/historico-vacinas/historico-vacinas';
 import { HistoricoConsultas } from './pages/historico-consultas/historico-consultas';
 import { HistoricoComorbidades } from './pages/historico-comorbidades/historico-comorbidades';
 import { Scheduling } from './pages/scheduling/scheduling';
+import { RegisterMedication } from './pages/register-medication/register-medication';
 
 export const routes: Routes = [
   {
@@ -47,5 +48,9 @@ export const routes: Routes = [
   {
     path: 'agendamento',
     component: Scheduling,
+  },
+  {
+    path: 'registrar-medicamento',
+    component: RegisterMedication,
   },
 ];
