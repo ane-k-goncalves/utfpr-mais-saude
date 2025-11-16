@@ -1,0 +1,53 @@
+<div class="bg-base-100 rounded-box shadow-md p-8 w-full max-w-3xl mx-auto">
+  <h2 class="text-xl font-semibold opacity-70 mb-6">Agendar Consulta</h2>
+
+  <form class="space-y-5">
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text font-medium">Especialidade</span>
+      </label>
+      <select class="select select-bordered w-full">
+        <option disabled selected>Selecione a especialidade</option>
+        <option>Cardiologia</option>
+        <option>Dermatologia</option>
+        <option>Clínico Geral</option>
+        <option>Ortopedia</option>
+      </select>
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text font-medium">Profissional</span>
+      </label>
+      <select class="select select-bordered w-full">
+        <option disabled selected>Selecione o profissional</option>
+        <option>Dr. Paulo Andrade</option>
+        <option>Dra. Marina Costa</option>
+        <option>Dr. Roberto Lima</option>
+      </select>
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text font-medium">Data</span>
+      </label>
+      <input type="date" class="input input-bordered w-full" />
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text font-medium">Horário</span>
+      </label>
+      <input type="time" class="input input-bordered w-full" />
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text font-medium">Observações (opcional)</span>
+      </label>
+      <textarea class="textarea textarea-bordered w-full" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-primary w-full mt-4">Agendar Consulta</button>
+  </form>
+</div>
