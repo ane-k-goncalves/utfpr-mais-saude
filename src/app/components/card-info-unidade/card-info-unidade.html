@@ -1,0 +1,28 @@
+<a
+  class="bg-white rounded-2xl shadow-lg p-6 block hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+>
+  <!-- Cabeçalho com ícone -->
+  <div class="flex items-center justify-between mb-4">
+    <div class="text-xl font-bold text-gray-900">
+      {{ dataInfoUpa.nomeUpa }}
+    </div>
+  </div>
+
+  <!-- Informações em mini-cards com fundo suave -->
+  <div class="grid grid-cols-3 gap-4 text-sm text-gray-700">
+    <div class="bg-blue-50 rounded-xl p-3 shadow-inner flex flex-col items-center">
+      <span class="font-semibold text-blue-700">Médicos</span>
+      <span class="mt-1 text-lg font-bold text-gray-900">{{ dataInfoUpa.medicosUpa }}</span>
+    </div>
+    <div class="bg-green-50 rounded-xl p-3 shadow-inner flex flex-col items-center">
+      <span class="font-semibold text-green-700">Pacientes</span>
+      <span class="mt-1 text-lg font-bold text-gray-900">{{ dataInfoUpa.pacientesUpa }}</span>
+    </div>
+    <div class="bg-yellow-50 rounded-xl p-3 shadow-inner flex flex-col items-center">
+      <span class="font-semibold text-yellow-700">Espera</span>
+      <span class="mt-1 text-lg font-bold text-gray-900">{{ dataInfoUpa.tempoEspera }}</span>
+    </div>
+  </div>
+
+  <div class="mt-4 text-right text-xs text-gray-400">Atualizado há 5 min</div>
+</a>
