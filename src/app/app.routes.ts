@@ -9,6 +9,7 @@ import { HistoricoConsultas } from './pages/historico-consultas/historico-consul
 import { HistoricoComorbidades } from './pages/historico-comorbidades/historico-comorbidades';
 import { Scheduling } from './pages/scheduling/scheduling';
 import { RegisterMedication } from './pages/register-medication/register-medication';
+import { InfoUnidades } from './pages/info-unidades/info-unidades';
 
 export const routes: Routes = [
   {
@@ -52,5 +53,9 @@ export const routes: Routes = [
   {
     path: 'registrar-medicamento',
     component: RegisterMedication,
+  },
+  {
+    path: 'info-unidades',
+    component: InfoUnidades,
   },
 ];

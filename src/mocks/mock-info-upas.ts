@@ -1,0 +1,88 @@
+import { CardInfoUpa } from '../app/interfaces/card-info-upa.model';
+
+export const dataInfoUpa: CardInfoUpa[] = [
+  {
+    id: 1,
+    nomeUpa: 'FL',
+    medicosUpa: 6,
+    pacientesUpa: 5,
+    tempoEspera: '8:48',
+  },
+  {
+    id: 2,
+    nomeUpa: 'KY',
+    medicosUpa: 10,
+    pacientesUpa: 58,
+    tempoEspera: '10:54',
+  },
+  {
+    id: 3,
+    nomeUpa: 'UT',
+    medicosUpa: 9,
+    pacientesUpa: 79,
+    tempoEspera: '11:46',
+  },
+  {
+    id: 4,
+    nomeUpa: 'TN',
+    medicosUpa: 7,
+    pacientesUpa: 60,
+    tempoEspera: '11:13',
+  },
+  {
+    id: 5,
+    nomeUpa: 'MI',
+    medicosUpa: 1,
+    pacientesUpa: 47,
+    tempoEspera: '6:18',
+  },
+  {
+    id: 6,
+    nomeUpa: 'MD',
+    medicosUpa: 7,
+    pacientesUpa: 87,
+    tempoEspera: '12:19',
+  },
+  {
+    id: 7,
+    nomeUpa: 'TX',
+    medicosUpa: 7,
+    pacientesUpa: 29,
+    tempoEspera: '4:11',
+  },
+  {
+    id: 8,
+    nomeUpa: 'MI',
+    medicosUpa: 4,
+    pacientesUpa: 52,
+    tempoEspera: '8:16',
+  },
+  {
+    id: 9,
+    nomeUpa: 'WI',
+    medicosUpa: 4,
+    pacientesUpa: 25,
+    tempoEspera: '10:45',
+  },
+  {
+    id: 10,
+    nomeUpa: 'GA',
+    medicosUpa: 6,
+    pacientesUpa: 15,
+    tempoEspera: '10:44',
+  },
+  {
+    id: 11,
+    nomeUpa: 'NY',
+    medicosUpa: 6,
+    pacientesUpa: 15,
+    tempoEspera: '10:44',
+  },
+  {
+    id: 12,
+    nomeUpa: 'TR',
+    medicosUpa: 6,
+    pacientesUpa: 15,
+    tempoEspera: '10:44',
+  },
+];
