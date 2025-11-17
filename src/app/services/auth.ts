@@ -37,16 +37,16 @@ export class Auth {
     }
   }
 
-  // logout() {
-  //   this.pb.authStore.clear();
-  //   this.router.navigate(['login']);
-  // }
+  logout() {
+    this.pb.authStore.clear();
+    this.router.navigate(['']);
+  }
 
-  // get currentUser() {
-  //   return this.pb.authStore.model;
-  // }
+  get currentUser() {
+    return this.pb.authStore.model;
+  }
 
-  // get isLoggedIn() {
-  //   return !!this.pb.authStore.model;
-  // }
+  get isLoggedIn() {
+    return !!this.pb.authStore.model;
+  }
 }

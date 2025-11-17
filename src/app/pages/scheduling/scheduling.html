@@ -1,12 +1,16 @@
 <div class="bg-base-100 rounded-box shadow-md p-8 w-full max-w-3xl mx-auto">
   <h2 class="text-xl font-semibold opacity-70 mb-6">Agendar Consulta</h2>
 
-  <form class="space-y-5">
+  <form (ngSubmit)="onSubmit()" class="space-y-5">
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Especialidade</span>
       </label>
-      <select class="select select-bordered w-full">
+      <select
+        class="select select-bordered w-full"
+        [(ngModel)]="form.especialidade"
+        name="especialidade"
+      >
         <option disabled selected>Selecione a especialidade</option>
         <option>Cardiologia</option>
         <option>Dermatologia</option>
@@ -19,7 +23,11 @@
       <label class="label">
         <span class="label-text font-medium">Profissional</span>
       </label>
-      <select class="select select-bordered w-full">
+      <select
+        class="select select-bordered w-full"
+        [(ngModel)]="form.profissional"
+        name="profissional"
+      >
         <option disabled selected>Selecione o profissional</option>
         <option>Dr. Paulo Andrade</option>
         <option>Dra. Marina Costa</option>
@@ -31,23 +39,50 @@
       <label class="label">
         <span class="label-text font-medium">Data</span>
       </label>
-      <input type="date" class="input input-bordered w-full" />
+      <input type="date" class="input input-bordered w-full" [(ngModel)]="form.data" name="data" />
     </div>
 
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Horário</span>
       </label>
-      <input type="time" class="input input-bordered w-full" />
+      <input
+        type="time"
+        class="input input-bordered w-full"
+        [(ngModel)]="form.horario"
+        name="horario"
+      />
     </div>
 
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Observações (opcional)</span>
       </label>
-      <textarea class="textarea textarea-bordered w-full" rows="3"></textarea>
+      <textarea
+        class="textarea textarea-bordered w-full"
+        rows="3"
+        [(ngModel)]="form.observacoes"
+        name="observacoes"
+      ></textarea>
     </div>
 
     <button class="btn btn-primary w-full mt-4">Agendar Consulta</button>
   </form>
+</div>
+
+<!-- LISTAGEM DAS CONSULTAS -->
+<div class="max-w-3xl mx-auto mt-10">
+  <h2 class="text-xl font-semibold opacity-70 mb-4">Consultas Agendadas</h2>
+
+  <div class="grid gap-4">
+    <div *ngFor="let c of consultasAgendadas" class="p-4 bg-base-200 rounded-box shadow">
+      <h3 class="font-semibold">{{ c.especialidade }} – {{ c.profissional }}</h3>
+      <p>Data: {{ c.data }}</p>
+      <p>Hora: {{ c.horario }}</p>
+      <p *ngIf="c.observacoes">Obs: {{ c.observacoes }}</p>
+
+      <button class="btn btn-warning btn-sm mt-3" (click)="editar(c)">Editar</button>
+      <button class="btn btn-error btn-sm mt-3" (click)="deletar(c.id)">Excluir</button>
+    </div>
+  </div>
 </div>
