@@ -15,7 +15,7 @@ export class InfoUnidades {
 
   constructor(private upasService: Upas) {}
 
-  ngOnInit(): void {
-    this.upas = this.upasService.getUpas();
+  async ngOnInit() {
+    this.upas = await this.upasService.getUpas();
   }
 }
