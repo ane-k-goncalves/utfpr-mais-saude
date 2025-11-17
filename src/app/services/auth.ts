@@ -21,4 +21,32 @@ export class Auth {
       throw err;
     }
   }
+
+  async register(email: string, password: string, name: string) {
+    try {
+      const newUser = await this.pb.collection('users').create({
+        name,
+        email,
+        password,
+        passwordConfirm: password,
+      });
+      return newUser;
+    } catch (err) {
+      console.error('erro ao registrar usuario', err);
+      throw err;
+    }
+  }
+
+  // logout() {
+  //   this.pb.authStore.clear();
+  //   this.router.navigate(['login']);
+  // }
+
+  // get currentUser() {
+  //   return this.pb.authStore.model;
+  // }
+
+  // get isLoggedIn() {
+  //   return !!this.pb.authStore.model;
+  // }
 }
