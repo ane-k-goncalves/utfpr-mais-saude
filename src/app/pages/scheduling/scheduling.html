@@ -11,7 +11,7 @@
         [(ngModel)]="form.especialidade"
         name="especialidade"
       >
-        <option disabled selected>Selecione a especialidade</option>
+        <option disabled value="">Selecione a especialidade</option>
         <option>Cardiologia</option>
         <option>Dermatologia</option>
         <option>Clínico Geral</option>
@@ -28,7 +28,7 @@
         [(ngModel)]="form.profissional"
         name="profissional"
       >
-        <option disabled selected>Selecione o profissional</option>
+        <option disabled value="">Selecione o profissional</option>
         <option>Dr. Paulo Andrade</option>
         <option>Dra. Marina Costa</option>
         <option>Dr. Roberto Lima</option>
@@ -70,19 +70,34 @@
   </form>
 </div>
 
-<!-- LISTAGEM DAS CONSULTAS -->
-<div class="max-w-3xl mx-auto mt-10">
-  <h2 class="text-xl font-semibold opacity-70 mb-4">Consultas Agendadas</h2>
+<hr />
 
-  <div class="grid gap-4">
-    <div *ngFor="let c of consultasAgendadas" class="p-4 bg-base-200 rounded-box shadow">
-      <h3 class="font-semibold">{{ c.especialidade }} – {{ c.profissional }}</h3>
-      <p>Data: {{ c.data }}</p>
-      <p>Hora: {{ c.horario }}</p>
-      <p *ngIf="c.observacoes">Obs: {{ c.observacoes }}</p>
+<h2 style="margin-top: 20px">Consultas Agendadas</h2>
 
-      <button class="btn btn-warning btn-sm mt-3" (click)="editar(c)">Editar</button>
-      <button class="btn btn-error btn-sm mt-3" (click)="deletar(c.id)">Excluir</button>
-    </div>
-  </div>
-</div>
+<table class="tabela-consultas">
+  <thead>
+    <tr>
+      <th>Especialidade</th>
+      <th>Profissional</th>
+      <th>Data</th>
+      <th>Horário</th>
+      <th>Observações</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of consultasList">
+      <td>{{ c.especialidade }}</td>
+      <td>{{ c.profissional }}</td>
+      <td>{{ c.data }}</td>
+      <td>{{ c.horario }}</td>
+      <td>{{ c.observacoes }}</td>
+
+      <td class="acoes">
+        <button class="btn editar" (click)="editar(c)">Editar</button>
+        <button class="btn excluir" (click)="delete(c.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

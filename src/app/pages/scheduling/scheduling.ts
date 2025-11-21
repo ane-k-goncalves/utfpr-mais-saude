@@ -11,6 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './scheduling.css',
 })
 export class Scheduling {
+  consultasList: any[] = [];
+
+  editando = false;
+  editingId: string | null = null;
+
   form = {
     especialidade: '',
     profissional: '',
@@ -19,61 +24,86 @@ export class Scheduling {
     observacoes: '',
   };
 
-  consultasAgendadas: any[] = [];
-
   constructor(private consultas: AgendamentoConsultas, private auth: Auth) {}
 
-  async ngOnInit() {
-    this.loadConsultas();
+  ngOnInit() {
+    this.load();
   }
 
-  async loadConsultas() {
-    try {
-      const user = this.auth.currentUser;
-
-      if (!user) return;
-
-      // Carrega só as consultas do usuário logado
-      this.consultasAgendadas = await this.consultas.getConsultas();
-    } catch (err) {
-      console.error('Erro ao carregar consultas', err);
-    }
+  load() {
+    this.consultas.getConsultas().subscribe({
+      next: (dados: any) => {
+        this.consultasList = dados.items || dados;
+      },
+      error: (e) => console.error(e),
+    });
   }
 
-  async onSubmit() {
-    try {
-      if (!this.auth.currentUser) {
-        alert('Usuário não autenticado');
-        return;
-      }
-
-      const payload = {
-        ...this.form,
-        user: this.auth.currentUser.id,
-      };
-
-      await this.consultas.createConsulta(payload);
-
-      alert('Consulta agendada com sucesso!');
-
-      this.form = { especialidade: '', profissional: '', data: '', horario: '', observacoes: '' };
-    } catch (e) {
-      console.error(e);
-      alert('Falha ao agendar.');
+  onSubmit() {
+    if (!this.auth.currentUser) {
+      alert('Usuário não autenticado');
+      return;
     }
+
+    const payload = {
+      ...this.form,
+      user: this.auth.currentUser.id,
+    };
+
+    if (this.editando && this.editingId) {
+      this.consultas.updateConsulta(this.editingId, payload).subscribe({
+        next: () => {
+          alert('Consulta atualizada com sucesso!');
+          this.resetForm();
+          this.load();
+        },
+        error: (e) => console.error(e),
+      });
+      return;
+    }
+
+    this.consultas.createConsulta(payload).subscribe({
+      next: () => {
+        alert('Consulta criada com sucesso!');
+        this.resetForm();
+        this.load();
+      },
+      error: (e) => console.error(e),
+    });
+  }
+
+  delete(id: string) {
+    if (!confirm('Deseja excluir?')) return;
+
+    this.consultas.deleteConsulta(id).subscribe({
+      next: () => this.load(),
+      error: (e) => console.error(e),
+    });
   }
 
   editar(c: any) {
-    console.log('Editar consulta:', c);
-    // mais tarde podemos abrir modal, preencher o form, etc.
+    this.editando = true;
+    this.editingId = c.id;
+
+    this.form = {
+      especialidade: c.especialidade,
+      profissional: c.profissional,
+      data: c.data,
+      horario: c.horario,
+      observacoes: c.observacoes,
+    };
   }
 
-  async deletar(id: string) {
-    try {
-      await this.consultas.deleteConsulta(id);
-      this.loadConsultas();
-    } catch (err) {
-      console.error('Erro ao deletar consulta', err);
-    }
+  resetForm() {
+    this.form = {
+      especialidade: '',
+      profissional: '',
+      data: '',
+      horario: '',
+      observacoes: '',
+    };
+
+    this.editando = false;
+    this.editingId = null;
   }
 }

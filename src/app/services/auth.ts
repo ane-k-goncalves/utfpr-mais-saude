@@ -17,7 +17,7 @@ export class Auth {
       const userService = await this.pb.collection('users').authWithPassword(email, password);
       return userService;
     } catch (err) {
-      console.log('ero ao logar!!!', err);
+      console.log('erro ao logar!!!', err);
       throw err;
     }
   }

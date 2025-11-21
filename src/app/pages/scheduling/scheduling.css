@@ -1,0 +1,58 @@
+.tabela-consultas {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-consultas thead {
+  background: #f2f2f2;
+}
+
+.tabela-consultas th {
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.tabela-consultas td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabela-consultas tr:hover {
+  background: #fafafa;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.editar {
+  background: #3498db;
+}
+
+.excluir {
+  background: #e74c3c;
+}

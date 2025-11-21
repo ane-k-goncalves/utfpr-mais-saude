@@ -1,25 +1,26 @@
-import { Injectable } from '@angular/core';
-import PocketBase from 'pocketbase';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AgendamentoConsultas {
-  private pb = new PocketBase('127.0.0.1:8090');
+  private http = inject(HttpClient);
+  private pb = 'http://127.0.0.1:8090/api/collections/consultas/records';
 
-  async getConsultas() {
-    return await this.pb.collection('consultas').getFullList();
+  getConsultas() {
+    return this.http.get(this.pb);
   }
 
-  async createConsulta(dados: any) {
-    return await this.pb.collection('consultas').create(dados);
+  createConsulta(dados: any) {
+    return this.http.post(this.pb, dados);
   }
 
-  async updateConsulta(id: string, dados: any) {
-    return await this.pb.collection('consultas').update(id, dados);
+  updateConsulta(id: string, dados: any) {
+    return this.http.patch(`${this.pb}/${id}`, dados);
   }
 
-  async deleteConsulta(id: string) {
-    return await this.pb.collection('consultas').delete(id);
+  deleteConsulta(id: string) {
+    return this.http.delete(`${this.pb}/${id}`);
   }
 }
