@@ -17,7 +17,7 @@ export class Auth {
       const userService = await this.pb.collection('users').authWithPassword(email, password);
       return userService;
     } catch (err) {
-      console.log('ero ao logar!!!', err);
+      console.log('erro ao logar!!!', err);
       throw err;
     }
   }
@@ -37,16 +37,16 @@ export class Auth {
     }
   }
 
-  // logout() {
-  //   this.pb.authStore.clear();
-  //   this.router.navigate(['login']);
-  // }
+  logout() {
+    this.pb.authStore.clear();
+    this.router.navigate(['']);
+  }
 
-  // get currentUser() {
-  //   return this.pb.authStore.model;
-  // }
+  get currentUser() {
+    return this.pb.authStore.model;
+  }
 
-  // get isLoggedIn() {
-  //   return !!this.pb.authStore.model;
-  // }
+  get isLoggedIn() {
+    return !!this.pb.authStore.model;
+  }
 }
