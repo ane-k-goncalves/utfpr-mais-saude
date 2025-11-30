@@ -15,4 +15,8 @@ export class Historico {
   isBaseRoute(): boolean {
     return this.router.url === '/historico';
   }
+
+  irPara(rota: string) {
+    this.router.navigate([rota]);
+  }
 }
