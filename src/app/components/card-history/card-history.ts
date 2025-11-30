@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import CardDataHistory from '../../interfaces/card-history.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-history',
@@ -11,9 +10,9 @@ import { Router } from '@angular/router';
 export class CardHistory {
   @Input() cardHistorico!: CardDataHistory;
 
-  constructor(private router: Router) {}
+  @Output() navegar = new EventEmitter<string>();
 
-  navegarHistorico(): void {
-    this.router.navigate([this.cardHistorico.link]);
+  acionarNavegacao(): void {
+    this.navegar.emit(this.cardHistorico.link);
   }
 }
