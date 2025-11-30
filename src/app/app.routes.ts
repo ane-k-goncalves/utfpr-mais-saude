@@ -33,15 +33,15 @@ export const routes: Routes = [
     component: Historico,
     children: [
       {
-        path: 'vacinas',
+        path: 'vacinas/:id',
         component: HistoricoVacinas,
       },
       {
-        path: 'consultas',
+        path: 'consultas/:id',
         component: HistoricoConsultas,
       },
       {
-        path: 'comorbidades',
+        path: 'comorbidades/:id',
         component: HistoricoComorbidades,
       },
     ],
