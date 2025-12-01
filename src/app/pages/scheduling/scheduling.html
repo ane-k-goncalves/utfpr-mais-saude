@@ -1,10 +1,12 @@
 <div
   class="bg-base-100 rounded-box shadow-md p-4 sm:p-6 md:p-8 w-full max-w-full sm:max-w-md md:max-w-3xl mx-auto"
 >
+<div
+  class="bg-base-100 rounded-box shadow-md p-4 sm:p-6 md:p-8 w-full max-w-full sm:max-w-md md:max-w-3xl mx-auto"
+>
   <h2 class="text-xl font-semibold opacity-70 mb-6">Agendar Consulta</h2>
 
   <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)" class="space-y-5">
-    <!-- ESPECIALIDADE -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Especialidade</span>
@@ -105,7 +107,6 @@
       ></textarea>
     </div>
 
-    <!-- MENSAGENS DE SUCESSO / ERRO -->
     <div *ngIf="msgOk" class="alert alert-success">{{ msgOk }}</div>
     <div *ngIf="msgErro" class="alert alert-error">{{ msgErro }}</div>
 
@@ -117,7 +118,9 @@
 </div>
 
 <hr class="my-6" />
+<hr class="my-6" />
 
+<h2 class="mt-6 mb-4 text-lg font-semibold">Consultas Agendadas</h2>
 <h2 class="mt-6 mb-4 text-lg font-semibold">Consultas Agendadas</h2>
 
 <!-- TABELA RESPONSIVA -->
@@ -136,6 +139,25 @@
       </tr>
     </thead>
 
+    <tbody class="divide-y divide-gray-100">
+      <tr *ngFor="let c of consultasList">
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.especialidade }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.profissional }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.data }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.horario }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600 hidden sm:table-cell">{{ c.observacoes }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600 flex flex-col sm:flex-row gap-2">
+          <button class="btn btn-sm btn-primary w-full sm:w-auto" (click)="editar(c)">
+            Editar
+          </button>
+          <button class="btn btn-sm btn-error w-full sm:w-auto" (click)="delete(c.id)">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     <tbody class="divide-y divide-gray-100">
       <tr *ngFor="let c of consultasList">
         <td class="px-3 py-2 text-sm text-gray-600">{{ c.especialidade }}</td>
