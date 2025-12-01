@@ -1,1 +1,12 @@
-<google-map [center]="center" [zoom]="zoom"> </google-map>
+<div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] p-2">
+  <div class="w-full h-full rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+    <google-map [center]="center" [zoom]="zoom" class="w-full h-full rounded-xl">
+      <map-marker
+        *ngFor="let m of markers"
+        [position]="m.position"
+        [label]="m.label"
+        [title]="m.title"
+      ></map-marker>
+    </google-map>
+  </div>
+</div>
