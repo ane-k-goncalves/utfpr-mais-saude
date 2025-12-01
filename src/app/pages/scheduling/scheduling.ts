@@ -13,6 +13,9 @@ import { CommonModule } from '@angular/common';
 export class Scheduling {
   consultasList: any[] = [];
 
+  msgErro: string | null = null;
+  msgOk: string | null = null;
+
   editando = false;
   editingId: string | null = null;
 
@@ -39,9 +42,16 @@ export class Scheduling {
     });
   }
 
-  onSubmit() {
+  onSubmit(formRef: any) {
+    if (formRef.invalid) {
+      this.msgErro = 'Preencha todos os campos obrigatórios.';
+      this.msgOk = null;
+      return;
+    }
+
     if (!this.auth.currentUser) {
-      alert('Usuário não autenticado');
+      this.msgErro = 'Usuário não autenticado.';
+      this.msgOk = null;
       return;
     }
 
@@ -53,22 +63,34 @@ export class Scheduling {
     if (this.editando && this.editingId) {
       this.consultas.updateConsulta(this.editingId, payload).subscribe({
         next: () => {
-          alert('Consulta atualizada com sucesso!');
+          this.msgOk = 'Consulta atualizada com sucesso!';
+          this.msgErro = null;
           this.resetForm();
+          formRef.resetForm();
           this.load();
         },
-        error: (e) => console.error(e),
+        error: (e) => {
+          this.msgErro = 'Erro ao atualizar consulta. Tente novamente.';
+          this.msgOk = null;
+          console.error(e);
+        },
       });
       return;
     }
 
     this.consultas.createConsulta(payload).subscribe({
       next: () => {
-        alert('Consulta criada com sucesso!');
+        this.msgOk = 'Consulta criada com sucesso!';
+        this.msgErro = null;
         this.resetForm();
+        formRef.resetForm();
         this.load();
       },
-      error: (e) => console.error(e),
+      error: (e) => {
+        this.msgErro = 'Erro ao criar consulta. Tente novamente.';
+        this.msgOk = null;
+        console.error(e);
+      },
     });
   }
 

@@ -1,15 +1,19 @@
 <div class="bg-base-100 rounded-box shadow-md p-8 w-full max-w-3xl mx-auto">
   <h2 class="text-xl font-semibold opacity-70 mb-6">Agendar Consulta</h2>
 
-  <form (ngSubmit)="onSubmit()" class="space-y-5">
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)" class="space-y-5">
+    <!-- ESPECIALIDADE -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Especialidade</span>
       </label>
+
       <select
         class="select select-bordered w-full"
         [(ngModel)]="form.especialidade"
         name="especialidade"
+        required
+        #esp="ngModel"
       >
         <option disabled value="">Selecione a especialidade</option>
         <option>Cardiologia</option>
@@ -17,47 +21,82 @@
         <option>Clínico Geral</option>
         <option>Ortopedia</option>
       </select>
+
+      <div *ngIf="esp.invalid && esp.touched" class="text-red-500 text-sm mt-1">
+        Campo obrigatório.
+      </div>
     </div>
 
+    <!-- PROFISSIONAL -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Profissional</span>
       </label>
+
       <select
         class="select select-bordered w-full"
         [(ngModel)]="form.profissional"
         name="profissional"
+        required
+        #prof="ngModel"
       >
         <option disabled value="">Selecione o profissional</option>
         <option>Dr. Paulo Andrade</option>
         <option>Dra. Marina Costa</option>
         <option>Dr. Roberto Lima</option>
       </select>
+
+      <div *ngIf="prof.invalid && prof.touched" class="text-red-500 text-sm mt-1">
+        Campo obrigatório.
+      </div>
     </div>
 
+    <!-- DATA -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Data</span>
       </label>
-      <input type="date" class="input input-bordered w-full" [(ngModel)]="form.data" name="data" />
+
+      <input
+        type="date"
+        class="input input-bordered w-full"
+        [(ngModel)]="form.data"
+        name="data"
+        required
+        #dataRef="ngModel"
+      />
+
+      <div *ngIf="dataRef.invalid && dataRef.touched" class="text-red-500 text-sm mt-1">
+        Informe a data.
+      </div>
     </div>
 
+    <!-- HORARIO -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Horário</span>
       </label>
+
       <input
         type="time"
         class="input input-bordered w-full"
         [(ngModel)]="form.horario"
         name="horario"
+        required
+        #horarioRef="ngModel"
       />
+
+      <div *ngIf="horarioRef.invalid && horarioRef.touched" class="text-red-500 text-sm mt-1">
+        Informe o horário.
+      </div>
     </div>
 
+    <!-- OBSERVAÇÕES (opcional) -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Observações (opcional)</span>
       </label>
+
       <textarea
         class="textarea textarea-bordered w-full"
         rows="3"
@@ -66,7 +105,14 @@
       ></textarea>
     </div>
 
-    <button class="btn btn-primary w-full mt-4">Agendar Consulta</button>
+    <!-- MENSAGENS DE SUCESSO / ERRO -->
+    <div *ngIf="msgOk" class="alert alert-success">{{ msgOk }}</div>
+    <div *ngIf="msgErro" class="alert alert-error">{{ msgErro }}</div>
+
+    <!-- BOTÃO SUBMIT -->
+    <button class="btn btn-primary w-full mt-4" [disabled]="formRef.invalid">
+      {{ editando ? 'Salvar alterações' : 'Agendar Consulta' }}
+    </button>
   </form>
 </div>
 
