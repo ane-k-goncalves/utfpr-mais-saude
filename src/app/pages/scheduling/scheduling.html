@@ -1,8 +1,9 @@
-<div class="bg-base-100 rounded-box shadow-md p-8 w-full max-w-3xl mx-auto">
+<div
+  class="bg-base-100 rounded-box shadow-md p-4 sm:p-6 md:p-8 w-full max-w-full sm:max-w-md md:max-w-3xl mx-auto"
+>
   <h2 class="text-xl font-semibold opacity-70 mb-6">Agendar Consulta</h2>
 
   <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)" class="space-y-5">
-    <!-- ESPECIALIDADE -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Especialidade</span>
@@ -51,47 +52,43 @@
       </div>
     </div>
 
-    <!-- DATA -->
-    <div class="form-control">
-      <label class="label">
-        <span class="label-text font-medium">Data</span>
-      </label>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- DATA -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-medium">Data</span>
+        </label>
+        <input
+          type="date"
+          class="input input-bordered w-full"
+          [(ngModel)]="form.data"
+          name="data"
+          required
+          #dataRef="ngModel"
+        />
+        <div *ngIf="dataRef.invalid && dataRef.touched" class="text-red-500 text-sm mt-1">
+          Informe a data.
+        </div>
+      </div>
 
-      <input
-        type="date"
-        class="input input-bordered w-full"
-        [(ngModel)]="form.data"
-        name="data"
-        required
-        #dataRef="ngModel"
-      />
-
-      <div *ngIf="dataRef.invalid && dataRef.touched" class="text-red-500 text-sm mt-1">
-        Informe a data.
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-medium">Horário</span>
+        </label>
+        <input
+          type="time"
+          class="input input-bordered w-full"
+          [(ngModel)]="form.horario"
+          name="horario"
+          required
+          #horarioRef="ngModel"
+        />
+        <div *ngIf="horarioRef.invalid && horarioRef.touched" class="text-red-500 text-sm mt-1">
+          Informe o horário.
+        </div>
       </div>
     </div>
 
-    <!-- HORARIO -->
-    <div class="form-control">
-      <label class="label">
-        <span class="label-text font-medium">Horário</span>
-      </label>
-
-      <input
-        type="time"
-        class="input input-bordered w-full"
-        [(ngModel)]="form.horario"
-        name="horario"
-        required
-        #horarioRef="ngModel"
-      />
-
-      <div *ngIf="horarioRef.invalid && horarioRef.touched" class="text-red-500 text-sm mt-1">
-        Informe o horário.
-      </div>
-    </div>
-
-    <!-- OBSERVAÇÕES (opcional) -->
     <div class="form-control">
       <label class="label">
         <span class="label-text font-medium">Observações (opcional)</span>
@@ -105,45 +102,50 @@
       ></textarea>
     </div>
 
-    <!-- MENSAGENS DE SUCESSO / ERRO -->
     <div *ngIf="msgOk" class="alert alert-success">{{ msgOk }}</div>
     <div *ngIf="msgErro" class="alert alert-error">{{ msgErro }}</div>
 
-    <!-- BOTÃO SUBMIT -->
-    <button class="btn btn-primary w-full mt-4" [disabled]="formRef.invalid">
+    <button class="btn btn-primary w-full sm:w-auto mt-4" [disabled]="formRef.invalid">
       {{ editando ? 'Salvar alterações' : 'Agendar Consulta' }}
     </button>
   </form>
 </div>
 
-<hr />
+<hr class="my-6" />
 
-<h2 style="margin-top: 20px">Consultas Agendadas</h2>
+<h2 class="mt-6 mb-4 text-lg font-semibold">Consultas Agendadas</h2>
 
-<table class="tabela-consultas">
-  <thead>
-    <tr>
-      <th>Especialidade</th>
-      <th>Profissional</th>
-      <th>Data</th>
-      <th>Horário</th>
-      <th>Observações</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
+<div class="overflow-x-auto">
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead>
+      <tr>
+        <th class="px-3 py-2 text-left text-sm font-medium text-gray-700">Especialidade</th>
+        <th class="px-3 py-2 text-left text-sm font-medium text-gray-700">Profissional</th>
+        <th class="px-3 py-2 text-left text-sm font-medium text-gray-700">Data</th>
+        <th class="px-3 py-2 text-left text-sm font-medium text-gray-700">Horário</th>
+        <th class="px-3 py-2 text-left text-sm font-medium text-gray-700 hidden sm:table-cell">
+          Observações
+        </th>
+        <th class="px-3 py-2 text-left text-sm font-medium text-gray-700">Ações</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr *ngFor="let c of consultasList">
-      <td>{{ c.especialidade }}</td>
-      <td>{{ c.profissional }}</td>
-      <td>{{ c.data }}</td>
-      <td>{{ c.horario }}</td>
-      <td>{{ c.observacoes }}</td>
-
-      <td class="acoes">
-        <button class="btn editar" (click)="editar(c)">Editar</button>
-        <button class="btn excluir" (click)="delete(c.id)">Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <tbody class="divide-y divide-gray-100">
+      <tr *ngFor="let c of consultasList">
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.especialidade }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.profissional }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.data }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600">{{ c.horario }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600 hidden sm:table-cell">{{ c.observacoes }}</td>
+        <td class="px-3 py-2 text-sm text-gray-600 flex flex-col sm:flex-row gap-2">
+          <button class="btn btn-sm btn-primary w-full sm:w-auto" (click)="editar(c)">
+            Editar
+          </button>
+          <button class="btn btn-sm btn-error w-full sm:w-auto" (click)="delete(c.id)">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
