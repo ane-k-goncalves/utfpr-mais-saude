@@ -85,4 +85,4 @@ Uma aplicação web de gestão de saúde universitária, voltada para alunos e c
 
 - [x] ID25: Criar um repositório no GitHub utilizando a estrutura do Gitflow, estabelecendo as branches "main" e "develop".
 - [x] ID26: Colaborar com outros membros do projeto, realizando fusões (merges) e resolução de conflitos.
-- [x] ID27: Planejar, configurar e executar o processo de build da aplicação, preparando-a para produção e realizar o deploy em um ambiente de hospedagem.
+- [] ID27: Planejar, configurar e executar o processo de build da aplicação, preparando-a para produção e realizar o deploy em um ambiente de hospedagem.
